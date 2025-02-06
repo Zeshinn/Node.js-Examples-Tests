@@ -35,10 +35,10 @@ const fs = require('fs');
 //     }
 // });
 
-fs.unlink('exampleRenamed.txt', (err)=>{
-    if(err){
-        console.log(err);
-    }else{
-        console.log("Successfully deleted the file.");
-    }
-});
+// fs.unlink('exampleRenamed.txt', (err)=>{
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log("Successfully deleted the file.");
+//     }
+// });
