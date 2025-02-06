@@ -1,7 +1,7 @@
 const fs = require('fs');
 const readLine = require('readline');
 const rl = readLine.createInterface({input: process.stdin, output: process.stdout});
-rl.question('Choose between [CREATE/REMOVE]\n', (answer)=>{
+rl.question('Choose between [CREATE/REMOVE/READ]\n', (answer)=>{
     answer = answer.trim().toLocaleLowerCase();
     console.log(`You chose option ${answer.toUpperCase()}.`);
     menu(answer);
@@ -38,6 +38,15 @@ function menu(input){
                 console.log(err.message);
             }else{
                 console.log('Successfully deleted the folder and it\'s contents.');
+            }
+        });
+    }else if(input=='read'){
+        fs.readdir('./Tutorial', (err,files)=>{
+            if(err){
+                console.log(err.message);
+            }else{
+                console.log(files);
+                console.log("Successfully read files.");
             }
         });
     }
